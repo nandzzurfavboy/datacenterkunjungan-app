@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tb_dinas', function (Blueprint $table) {
+        Schema::create('dinas', function (Blueprint $table) {
             $table->foreignId('kode_dinas');
             $table->string('nama_dinas');
             $table->timestamps();

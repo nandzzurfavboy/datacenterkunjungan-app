@@ -8,6 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Dinas extends Model
 {
     use HasFactory;
-
-    protected $table = 'tb_dinas';
 }
