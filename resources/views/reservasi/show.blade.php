@@ -74,7 +74,8 @@
                                     </div>
                                 </div>
                                 <div class="ml-4 flex-shrink-0">
-                                    <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                                    <a download href="{{ asset('assets/document/' . $reservasi->document) }}"
+                                        class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
                                 </div>
                             </li>
                         </ul>
