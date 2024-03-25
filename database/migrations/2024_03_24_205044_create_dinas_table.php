@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('dinas', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('kode_dinas');
             $table->string('nama_dinas');
             $table->timestamps();

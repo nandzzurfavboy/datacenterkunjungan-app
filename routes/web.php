@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\formReservasi;
 use App\Http\Controllers\HalamanController;
+use App\Http\Controllers\PetitionController;
+use App\Http\Controllers\RequestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/', formReservasi::class);
+Route::get('/', function () {
+    return view('reservasi.index');
+})->name('home');
 
-Route::get('cek-status', [formReservasi::class, 'cekstatus'])->name('reservasi.cekstatus');
+Route::resource('petitions', PetitionController::class);
+Route::get('success/{slug}', [PetitionController::class, 'success'])->name('success');
+// Route::get('cek-status', [formReservasi::class, 'cekstatus'])->name('reservasi.cekstatus');

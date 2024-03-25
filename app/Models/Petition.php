@@ -5,8 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Dinas extends Model
+class Petition extends Model
 {
     use HasFactory;
-    protected $table = 'dinas';
+    protected $guarded = [];
+
+    public function dinas()
+    {
+        return $this->belongsTo(Dinas::class);
+    }
 }
