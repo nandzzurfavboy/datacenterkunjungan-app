@@ -57,6 +57,27 @@
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $reservasi->quota }}</dd>
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Status</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                        @if ($reservasi->status == 'pending')
+                            <span
+                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                Pending
+                            </span>
+                        @elseif ($reservasi->status == 'approved')
+                            <span
+                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                Approved
+                            </span>
+                        @else
+                            <span
+                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                Rejected
+                            </span>
+                        @endif
+                    </dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Attachments</dt>
                     <dd class="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                         <ul role="list" class="divide-y divide-gray-100 rounded-md border border-gray-200">
