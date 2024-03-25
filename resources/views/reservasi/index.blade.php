@@ -8,7 +8,8 @@
                 class="font-bold text-sky-800">DISKOMINFO PROVINSI SUMATERA UTARA</span>. Anda dapat mengajukan permohonan
             kunjungan dengan mengisi data diri pada <a href="{{ route('petitions.create') }}" class="font-bold">Form
                 Permohonan
-                Kunjungan</a>, atau mengecek status permohonan anda pada halaman <a href="#" class="font-bold">Cek
+                Kunjungan</a>, atau mengecek status permohonan anda pada halaman <a href="{{ route('reservasi.cekstatus') }}"
+                class="font-bold">Cek
                 Status Permohonan</a>.</p>
         <p class="text-sm md:text-base lg:text-lg leading-10 text-gray-800 font-bold lg:mt-6">Apa yang ingin anda lakukan?
         </p>
@@ -20,7 +21,7 @@
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Permohonan Reservasi</h5>
             </a>
 
-            <a href="#"
+            <a href="{{ route('reservasi.cekstatus') }}"
                 class="flex items-center block max-w-sm p-6 border border-gray-200 rounded-lg shadow bg-gray-800">
                 <img src="{{ asset('assets/aprroved.png') }}" alt="Cek Status Permohonan" class="w-20 h-15 mr-4">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Cek Status Permohonan</h5>

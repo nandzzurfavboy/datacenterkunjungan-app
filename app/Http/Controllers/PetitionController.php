@@ -66,7 +66,7 @@ class PetitionController extends Controller
     public function success(Request $request, $slug)
     {
         $petition = Petition::where('slug', $slug)->first();
-        return $petition;
+        // return $petition;
         return view('reservasi.success', compact('petition'));
     }
 }

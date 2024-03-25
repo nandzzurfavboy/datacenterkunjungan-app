@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckStatusController;
 use App\Http\Controllers\formReservasi;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\PetitionController;
@@ -23,4 +24,4 @@ Route::get('/', function () {
 
 Route::resource('petitions', PetitionController::class);
 Route::get('success/{slug}', [PetitionController::class, 'success'])->name('success');
-// Route::get('cek-status', [formReservasi::class, 'cekstatus'])->name('reservasi.cekstatus');
+Route::get('cek-status', [CheckStatusController::class, 'cekStatus'])->name('reservasi.cekstatus');
