@@ -31,7 +31,6 @@ class PetitionController extends Controller
             // create random string token
             $data['token'] = "JKT" . str()->random(20) . date('Y');
             unset($data['check']);
-            // return $data;
             Petition::create($data);
             flash()->addSuccess('Reservasi berhasil dibuat');
             return redirect()->route('success', [
@@ -68,7 +67,6 @@ class PetitionController extends Controller
     public function success(Request $request, $slug)
     {
         $petition = Petition::where('slug', $slug)->first();
-        // return $petition;
         return view('reservasi.success', compact('petition'));
     }
 }

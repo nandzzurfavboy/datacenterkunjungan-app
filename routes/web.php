@@ -25,3 +25,5 @@ Route::get('/', function () {
 Route::resource('petitions', PetitionController::class);
 Route::get('success/{slug}', [PetitionController::class, 'success'])->name('success');
 Route::get('cek-status', [CheckStatusController::class, 'cekStatus'])->name('reservasi.cekstatus');
+Route::get('cek-status/result', [CheckStatusController::class, 'resultCheck'])->name('reservasi.result');
+Route::get('cek-status/detail/{token}', [CheckStatusController::class, 'resultToken'])->name('reservasi.result.token');
