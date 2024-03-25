@@ -33,12 +33,14 @@ class PetitionController extends Controller
             unset($data['check']);
             // return $data;
             Petition::create($data);
+            flash()->addSuccess('Reservasi berhasil dibuat');
             return redirect()->route('success', [
                 'slug' => $data['slug'],
                 $data['token']
             ]);
         } else {
-            return 'not checked';
+            flash()->addError('Anda harus menyetujui syarat dan ketentuan');
+            return back();
         }
     }
 

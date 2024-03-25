@@ -1,7 +1,7 @@
 @extends('layout.template')
 
 @section('konten')
-    <div class="container min-h-screen w-full px-6 mt-4 flex justify-center items-center mx-auto">
+    <div class="container min-h-screen w-full px-6 flex justify-center items-center mx-auto">
         <div class="w-2/3 flex items-center justify-center gap-10">
             <div class="intro">
                 <h1 class="text-2xl font-medium font-inter text-slate-800 md:text-2xl lg:text-3xl mb-2">
