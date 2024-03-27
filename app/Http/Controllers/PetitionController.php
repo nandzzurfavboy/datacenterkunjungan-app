@@ -29,7 +29,7 @@ class PetitionController extends Controller
             $data['slug'] = str($request->name . ' ' . str()->random(6))->slug();
             $data['date'] = Carbon::parse($request->date)->format('Y-m-d');
             // create random string token
-            $data['token'] = "JKT" . str()->random(20) . date('Y');
+            $data['token'] = "DKIPROVSU" . str()->random(10) . date('Y');
             unset($data['check']);
 
             // create image

@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\PermohonanController;
 use App\Http\Controllers\CheckStatusController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\formReservasi;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\PetitionController;
 use App\Http\Controllers\RequestController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +31,12 @@ Route::get('success/{slug}', [PetitionController::class, 'success'])->name('succ
 Route::get('cek-status', [CheckStatusController::class, 'cekStatus'])->name('reservasi.cekstatus');
 Route::get('cek-status/result', [CheckStatusController::class, 'resultCheck'])->name('reservasi.result');
 Route::get('cek-status/detail/{token}', [CheckStatusController::class, 'resultToken'])->name('reservasi.result.token');
+
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('dashboard/permohonan', [PermohonanController::class, 'permohonanAdmin'])->name('dashboard.permohonan');
+Route::get('dashboard/riwayat-permohonan', [PermohonanController::class, 'riwayatPermohonan'])->name('dashboard.riwayat');
+Route::get('dashboard/opd-su', [PermohonanController::class, 'resultDinas'])->name('dashboard.opd');
+Route::get('dashboard/pengelola-sirekudace', [PermohonanController::class, 'adminSirekudace'])->name('dashboard.pengelola');
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('auth.login');
+Route::post('/login', 'LoginController@login')->name('login.submit');
