@@ -59,15 +59,4 @@ class PermohonanController extends Controller
         return view('sirekudace.dashboard.riwayat', compact('riwayatPermohonan'));
     }
 
-    // Dalam controller
-    public function getPermohonanStats()
-    {
-        $totalPermohonan = Petition::get();
-        $permohonanDisetujui = Petition::where('status', 'approved')->count();
-        $menungguPersetujuan = Petition::where('status', 'pending')->count();
-        $permohonanDitolak = Petition::where('status', 'rejected')->count();
-
-        dd($menungguPersetujuan);
-        return view('sirekudace.dashboard.index', compact('totalPermohonan', 'permohonanDisetujui', 'menungguPersetujuan', 'permohonanDitolak'));
-    }
 }
