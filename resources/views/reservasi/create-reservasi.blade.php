@@ -167,12 +167,22 @@
                             yang akan berkunjung.</p>
                     </div>
 
-                    <div class="col-span-full">
-                        <label for="dokumen_pendukung"
-                            class="block mb-2 text-sm font-medium leading-6 text-gray-900">Unggah Dokumen</label>
-                        <input name="document" required
-                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
-                            aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                    <div class="sm:col-span-4 xl:col-span-9">
+                        <label for="link" class="block text-sm font-medium leading-6 text-gray-900">Link
+                            Document/Foto</label>
+                        <div class="mt-2">
+                            <div
+                                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                                <input type="text" name="link" id="link"
+                                    placeholder="https://drive.google.com/..."
+                                    class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                    required>
+                            </div>
+                            <p class="mt-1 text-sm leading-6 text-gray-400">Silahkan pastekan link document/foto
+                                yang sudah
+                                di upload di Google Drive, jika
+                                diperlukan.</p>
+                        </div>
                     </div>
                 </div>
 

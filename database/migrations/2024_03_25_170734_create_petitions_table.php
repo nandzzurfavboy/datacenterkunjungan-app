@@ -28,7 +28,8 @@ return new class extends Migration
             $table->string('time');
             $table->integer('quota');
             $table->string('status')->default('pending');
-            $table->text('document')->nullable();
+            $table->text('link')->nullable();
+            $table->text('note')->nullable();
             // approved, rejected, pending
             $table->timestamps();
         });

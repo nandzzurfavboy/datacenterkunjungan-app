@@ -32,11 +32,17 @@ Route::get('cek-status', [CheckStatusController::class, 'cekStatus'])->name('res
 Route::get('cek-status/result', [CheckStatusController::class, 'resultCheck'])->name('reservasi.result');
 Route::get('cek-status/detail/{token}', [CheckStatusController::class, 'resultToken'])->name('reservasi.result.token');
 
+
+// route Admin
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('dashboard/permohonan', [PermohonanController::class, 'permohonanAdmin'])->name('dashboard.permohonan');
+Route::get('dashboard/permohonan/{slug}/edit', [PermohonanController::class, 'edit'])->name('dashboard.permohonan.edit');
+Route::put('dashboard/permohonan/{slug}', [PermohonanController::class, 'update'])->name('dashboard.permohonan.update');
+Route::get('dashboard/permohonan/delete/{slug}', [PermohonanController::class, 'destroy'])->name('dashboard.permohonan.delete');
 Route::get('dashboard/riwayat-permohonan', [PermohonanController::class, 'riwayatPermohonan'])->name('dashboard.riwayat');
 Route::get('dashboard/opd-su', [PermohonanController::class, 'resultDinas'])->name('dashboard.opd');
 Route::get('dashboard/pengelola-sirekudace', [PermohonanController::class, 'adminSirekudace'])->name('dashboard.pengelola');
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('auth.login');
-Route::post('/login', 'LoginController@login')->name('login.submit');
+// route Login
+// Route::get('/login', [LoginController::class, 'showLoginForm'])->name('auth.login');
+// Route::post('/login', 'LoginController@login')->name('login.submit');

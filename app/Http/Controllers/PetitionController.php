@@ -31,17 +31,6 @@ class PetitionController extends Controller
             // create random string token
             $data['token'] = "DKIPROVSU" . str()->random(10) . date('Y');
             unset($data['check']);
-
-            // create image
-            if ($request->hasFile('document')) {
-                $image = $request->file('document');
-                $filename = time() . '.' . $image->getClientOriginalExtension();
-                $image->move(public_path('assets/document'), $filename);
-                $data['document'] = $filename;
-            } else {
-                $data['document'] = null;
-            }
-
             Petition::create($data);
             flash()->addSuccess('Reservasi berhasil dibuat');
             return redirect()->route('success', [

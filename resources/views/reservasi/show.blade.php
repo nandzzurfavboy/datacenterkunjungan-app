@@ -77,6 +77,13 @@
                         @endif
                     </dd>
                 </div>
+                @if ($reservasi->note !== null)
+                    <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                        <dt class="text-sm font-medium leading-6 text-gray-900">Note</dt>
+                        <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 capitalize">
+                            {{ $reservasi->note }}</dd>
+                    </div>
+                @endif
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Attachments</dt>
                     <dd class="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -95,8 +102,8 @@
                                     </div>
                                 </div>
                                 <div class="ml-4 flex-shrink-0">
-                                    <a download href="{{ asset('assets/document/' . $reservasi->document) }}"
-                                        class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                                    <a target="_blank" href="{{ $reservasi->link }}"
+                                        class="font-medium text-indigo-600 hover:text-indigo-500">View Detail</a>
                                 </div>
                             </li>
                         </ul>
