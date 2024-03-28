@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\PermohonanController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CheckStatusController;
 use App\Http\Controllers\DashboardController;
@@ -44,6 +45,10 @@ Route::get('dashboard/permohonan/delete/{slug}', [PermohonanController::class, '
 Route::get('dashboard/riwayat-permohonan', [PermohonanController::class, 'riwayatPermohonan'])->name('dashboard.riwayat');
 Route::get('dashboard/opd-su', [PermohonanController::class, 'resultDinas'])->name('dashboard.opd');
 Route::resource('dashboard/users', UserController::class);
+
+// profile
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
 // logout
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
