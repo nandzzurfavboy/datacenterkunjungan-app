@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\PermohonanController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CheckStatusController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\formReservasi;
@@ -41,7 +42,7 @@ Route::put('dashboard/permohonan/{slug}', [PermohonanController::class, 'update'
 Route::get('dashboard/permohonan/delete/{slug}', [PermohonanController::class, 'destroy'])->name('dashboard.permohonan.delete');
 Route::get('dashboard/riwayat-permohonan', [PermohonanController::class, 'riwayatPermohonan'])->name('dashboard.riwayat');
 Route::get('dashboard/opd-su', [PermohonanController::class, 'resultDinas'])->name('dashboard.opd');
-Route::get('dashboard/pengelola-sirekudace', [PermohonanController::class, 'adminSirekudace'])->name('dashboard.pengelola');
+Route::resource('dashboard/users', UserController::class);
 
 // route Login
 // Route::get('/login', [LoginController::class, 'showLoginForm'])->name('auth.login');

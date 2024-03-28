@@ -23,7 +23,7 @@
                                 <th scope="col">Keterangan</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Dokumen Pendukung</th>
-                                <th scope="col" colspan="2" class="text-center">Aksi</th>
+                                <th scope="col" class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

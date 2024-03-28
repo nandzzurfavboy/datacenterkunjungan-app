@@ -48,11 +48,6 @@ class PermohonanController extends Controller
         return view('sirekudace.dashboard.opd', compact('listDinas'));
     }
 
-    public function adminSirekudace()
-    {
-        return view('sirekudace.dashboard.pengelola');
-    }
-
     public function riwayatPermohonan()
     {
         $riwayatPermohonan = Petition::latest()->get();

@@ -13,13 +13,14 @@
     <link rel="icon" href="{{ asset('assets/logo-sumut.png') }}" type="image/x-icon">
 
     <!-- Custom fonts for this template-->
-    <link href="{{ asset("assets/backsides/vendor/fontawesome-free/css/all.min.css") }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/backsides/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+        type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ asset("assets/backsides/css/sb-admin-2.min.css") }}" rel="stylesheet">
+    <link href="{{ asset('assets/backsides/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
 </head>
 
@@ -34,7 +35,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon w-75 mx-auto d-block">
-                    <img src="{{ asset("assets/logo-sumut.png") }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/logo-sumut.png') }}" class="img-fluid" alt="">
                 </div>
                 <div class="sidebar-brand-text mx-3">SIREKUDACE <br>DISKOMINFO</br></div>
             </a>
@@ -44,7 +45,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{ "/dashboard" }}">
+                <a class="nav-link" href="{{ '/dashboard' }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Beranda</span></a>
             </li>
@@ -59,13 +60,13 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route("dashboard.permohonan") }}">
+                <a class="nav-link collapsed" href="{{ route('dashboard.permohonan') }}">
                     <i class="fas fa-fw fa-clipboard-list"></i>
                     <span>Permohonan</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route("dashboard.riwayat") }}">
+                <a class="nav-link collapsed" href="{{ route('dashboard.riwayat') }}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Riwayat Permohonan</span>
                 </a>
@@ -81,7 +82,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route("dashboard.opd") }}">
+                <a class="nav-link collapsed" href="{{ route('dashboard.opd') }}">
                     <i class="fas fa-fw fa-building"></i>
                     <span>OPD Sumatera Utara</span>
                 </a>
@@ -89,7 +90,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route("dashboard.pengelola") }}">
+                <a class="nav-link" href="{{ route('users.index') }}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Pengelola SIREKUDACE</span></a>
             </li>
@@ -152,7 +153,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Halo, Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ asset("assets/backsides/img/undraw_profile.svg") }}">
+                                    src="{{ asset('assets/backsides/img/undraw_profile.svg') }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -166,7 +167,8 @@
                                     Edit Profile
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                    data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -189,7 +191,9 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>&copy; 2024 SIREKUDACE | Bidang Sandi Telekomunikasi dan Keamanan Informasi <a class="icon-link" href="https://diskominfo.sumutprov.go.id/">Dinas Komunikasi dan Informatika Provinsi Sumut</a>.</span>
+                        <span>&copy; 2024 SIREKUDACE | Bidang Sandi Telekomunikasi dan Keamanan Informasi <a
+                                class="icon-link" href="https://diskominfo.sumutprov.go.id/">Dinas Komunikasi dan
+                                Informatika Provinsi Sumut</a>.</span>
                     </div>
                 </div>
             </footer>
@@ -227,21 +231,21 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset("assets/backsides/vendor/jquery/jquery.min.js") }}"></script>
-    <script src="{{ asset("assets/backsides/vendor/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+    <script src="{{ asset('assets/backsides/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/backsides/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{{ asset("assets/backsides/vendor/jquery-easing/jquery.easing.min.js") }}"></script>
+    <script src="{{ asset('assets/backsides/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="{{ asset("assets/backsides/js/sb-admin-2.min.js") }}"></script>
+    <script src="{{ asset('assets/backsides/js/sb-admin-2.min.js') }}"></script>
 
     <!-- Page level plugins -->
-    <script src="{{ asset("assets/backsides/vendor/chart.js/Chart.min.js") }}"></script>
+    <script src="{{ asset('assets/backsides/vendor/chart.js/Chart.min.js') }}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{ asset("assets/backsides/js/demo/chart-area-demo.js") }}"></script>
-    <script src="{{ asset("assets/backsides/js/demo/chart-pie-demo.js") }}"></script>
+    <script src="{{ asset('assets/backsides/js/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('assets/backsides/js/demo/chart-pie-demo.js') }}"></script>
 
 </body>
 
