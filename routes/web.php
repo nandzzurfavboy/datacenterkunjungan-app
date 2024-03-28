@@ -34,6 +34,7 @@ Route::get('cek-status/result', [CheckStatusController::class, 'resultCheck'])->
 Route::get('cek-status/detail/{token}', [CheckStatusController::class, 'resultToken'])->name('reservasi.result.token');
 
 
+Route::middleware(['auth'])->group(function () {
 // route Admin
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('dashboard/permohonan', [PermohonanController::class, 'permohonanAdmin'])->name('dashboard.permohonan');
@@ -44,6 +45,12 @@ Route::get('dashboard/riwayat-permohonan', [PermohonanController::class, 'riwaya
 Route::get('dashboard/opd-su', [PermohonanController::class, 'resultDinas'])->name('dashboard.opd');
 Route::resource('dashboard/users', UserController::class);
 
+// logout
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+});
+
+Route::middleware(['guest'])->group(function () {
 // route Login
-// Route::get('/login', [LoginController::class, 'showLoginForm'])->name('auth.login');
-// Route::post('/login', 'LoginController@login')->name('login.submit');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'postLogin'])->name('post.login');
+});

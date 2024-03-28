@@ -12,7 +12,8 @@
     <title>Login | SIREKUDACE DISKOMINFO PROVSU</title>
 
     <!-- Custom fonts for this template-->
-    <link href="{{ asset('assets/backsides/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/backsides/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+        type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -35,23 +36,31 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block d-flex justify-content-center align-items-center">
-                                <img src="{{ asset('assets/logo-sumut.png') }}" alt="" class="img-fluid">
+                            <div
+                                class="col-lg-6 d-none m-auto text-center d-lg-block d-flex justify-content-center align-items-center">
+                                <img style="width: 300px" src="{{ asset('assets/logo-sumut.png') }}" alt=""
+                                    class="img-fluid">
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">LOGIN | SIREDUKACE <br>DISKOMINFO PROVSU</h1>
                                     </div>
-                                    <form class="user">
+                                    <form action="{{ route('post.login') }}" method="post" class="user">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="number" name="nip" value="{{ old('nip') }}"
+                                                class="form-control form-control-user @error('nip') is-invalid @enderror""
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Enter Your NIP">
+                                            @error('nip')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" name="password"
+                                                class="form-control form-control-user" id="exampleInputPassword"
+                                                placeholder="********">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -60,9 +69,9 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
+                                        </button>
                                     </form>
                                 </div>
                             </div>

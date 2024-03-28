@@ -24,7 +24,9 @@
                                 <th scope="col">Jenis Kelamin</th>
                                 <th scope="col">Jabatan</th>
                                 <th scope="col">No.Telp</th>
-                                <th scope="col" class="text-center">Aksi</th>
+                                @if (auth()->user()->role == 'superadmin')
+                                    <th scope="col" class="text-center">Aksi</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -38,18 +40,21 @@
                                     </td>
                                     <td>{{ $item->jabatan }}</td>
                                     <td>{{ $item->phone }}</td>
-                                    <td class="text-center">
-                                        <div class="d-flex">
-                                            <a href='{{ route('users.edit', $item->id) }}'
-                                                class="btn btn-warning btn-sm mr-2">Edit</a>
-                                            <form onsubmit="return confirm('Apakah Anda Yakin ?')"
-                                                action="{{ route('users.destroy', $item->id) }}" method="post">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit" class="btn btn-danger btn-sm rounded-1">Del</button>
-                                            </form>
-                                        </div>
-                                    </td>
+                                    @if (auth()->user()->role == 'superadmin')
+                                        <td class="text-center">
+                                            <div class="d-flex">
+                                                <a href='{{ route('users.edit', $item->id) }}'
+                                                    class="btn btn-warning btn-sm mr-2">Edit</a>
+                                                <form onsubmit="return confirm('Apakah Anda Yakin ?')"
+                                                    action="{{ route('users.destroy', $item->id) }}" method="post">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit"
+                                                        class="btn btn-danger btn-sm rounded-1">Del</button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    @endif
                                 </tr>
                             @empty
                                 <tr>
