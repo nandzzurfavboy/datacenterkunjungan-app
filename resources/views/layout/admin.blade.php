@@ -33,7 +33,7 @@
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #1f2937">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}">
                 <div class="sidebar-brand-icon w-75 mx-auto d-block">
                     <img src="{{ asset('assets/logo-sumut.png') }}" class="img-fluid" alt="">
                 </div>
@@ -44,7 +44,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ '/dashboard' }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Beranda</span></a>
@@ -59,13 +59,13 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item {{ Route::is('dashboard.permohonan*') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="{{ route('dashboard.permohonan') }}">
                     <i class="fas fa-fw fa-clipboard-list"></i>
                     <span>Permohonan</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ Route::is('dashboard.riwayat') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="{{ route('dashboard.riwayat') }}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Riwayat Permohonan</span>
@@ -81,7 +81,7 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item {{ Route::is('dashboard.opd') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="{{ route('dashboard.opd') }}">
                     <i class="fas fa-fw fa-building"></i>
                     <span>OPD Sumatera Utara</span>
@@ -89,7 +89,7 @@
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item {{ Route::is('users*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('users.index') }}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Pengelola SIREKUDACE</span></a>

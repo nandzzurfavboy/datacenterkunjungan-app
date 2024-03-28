@@ -117,7 +117,7 @@
                         </div>
                     </div>
                     <div class="d-flex gap-2 justify-content-end mt-4">
-                        <a href="http://arsip-app.test/teachers"
+                        <a href="{{ route('dashboard.permohonan') }}"
                             class="btn btn-sm px-3 btn-secondary rounded-pill mr-2">Cancel</a>
                         <button type="submit" class="btn btn-sm px-3 btn-primary rounded-pill">Update</button>
                     </div>
