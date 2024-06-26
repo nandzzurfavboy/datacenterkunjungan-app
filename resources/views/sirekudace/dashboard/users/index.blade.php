@@ -5,9 +5,10 @@
         <h1 class="h3 mb-2 text-gray-800">Pengelola SIREKUDACE DISKOMINFO PROVSU</h1>
         <p class="mb-4">Berikut adalah data Pengelola SISTEM INFORMASI RESERVASI KUNJUNGAN DATA CENTER DINAS KOMUNIKASI DAN
             INFORMATIKA PROVINSI SUMATERA UTARA.</p>
+            @if (auth()->user()->role == 'superadmin')
         <a href="{{ route('users.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm mb-2"><i
                 class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>
-
+            @endif
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">DATA PENGELOLA SISTEM INFORMASI RESERVASI KUNJUNGAN DATA CENTER

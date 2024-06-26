@@ -10,6 +10,7 @@
     <meta name="author" content="">
 
     <title>Login | SIREKUDACE DISKOMINFO PROVSU</title>
+    <link rel="icon" href="{{ asset('assets/logo-sumut.png') }}" type="image/x-icon">
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('assets/backsides/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
@@ -44,13 +45,13 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">LOGIN | SIREDUKACE <br>DISKOMINFO PROVSU</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">LOGIN | SIREKUDACE <br>DISKOMINFO PROVSU</h1>
                                     </div>
                                     <form action="{{ route('post.login') }}" method="post" class="user">
                                         @csrf
                                         <div class="form-group">
                                             <input type="number" name="nip" value="{{ old('nip') }}"
-                                                class="form-control form-control-user @error('nip') is-invalid @enderror""
+                                                class="form-control form-control-user @error('nip') is-invalid @enderror"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Your NIP">
                                             @error('nip')

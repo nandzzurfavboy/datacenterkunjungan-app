@@ -10,7 +10,7 @@
             <h6 class="m-0 font-weight-bold text-primary">RIWAYAT PERMOHONAN RESERVASI KUNJUNGAN DATA CENTER DINAS KOMUNIKASI DAN INFORMATIKA PROVINSI SUMATERA UTARA</h6>
             <br>
             <div>
-                <a href="#" onclick="window.print();" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <a href="{{ route('dashboard.laporan') }}" id="print-link" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                     <i class="fas fa-download fa-sm text-white-50"></i> Simpan Laporan
                 </a>
             </div>            
@@ -60,4 +60,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('print-link').addEventListener('click', function(event) {
+        event.preventDefault();
+        var url = this.href;
+
+        // Buka halaman laporan di jendela baru
+        var printWindow = window.open(url, '_blank');
+
+        // Tunggu halaman laporan dimuat, lalu cetak
+        printWindow.addEventListener('load', function() {
+            printWindow.print();
+        });
+    });
+</script>
+
 @endsection

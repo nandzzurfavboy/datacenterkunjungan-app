@@ -45,7 +45,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ '/dashboard' }}">
+                <a class="nav-link" href="{{ '/sirekudace' }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Beranda</span></a>
             </li>
@@ -81,8 +81,8 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item {{ Route::is('dashboard.opd') ? 'active' : '' }}">
-                <a class="nav-link collapsed" href="{{ route('dashboard.opd') }}">
+            <li class="nav-item {{ Route::is('dinas.index') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="{{ route('dinas.index') }}">
                     <i class="fas fa-fw fa-building"></i>
                     <span>OPD Sumatera Utara</span>
                 </a>

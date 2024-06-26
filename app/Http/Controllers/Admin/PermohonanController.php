@@ -42,16 +42,15 @@ class PermohonanController extends Controller
         return back();
     }
 
-    public function resultDinas()
-    {
-        $listDinas = Dinas::latest()->get();
-        return view('sirekudace.dashboard.opd', compact('listDinas'));
-    }
-
     public function riwayatPermohonan()
     {
         $riwayatPermohonan = Petition::latest()->get();
         return view('sirekudace.dashboard.riwayat', compact('riwayatPermohonan'));
     }
 
+    public function cetakLaporan()
+    {
+        $riwayatPermohonan = Petition::latest()->get();
+        return view('sirekudace.dashboard.laporan', compact('riwayatPermohonan'));
+    }
 }

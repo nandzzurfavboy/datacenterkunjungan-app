@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CheckStatusController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\DinasController;
 use App\Http\Controllers\formReservasi;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\PetitionController;
@@ -36,26 +37,28 @@ Route::get('cek-status/detail/{token}', [CheckStatusController::class, 'resultTo
 
 
 Route::middleware(['auth'])->group(function () {
-// route Admin
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('dashboard/permohonan', [PermohonanController::class, 'permohonanAdmin'])->name('dashboard.permohonan');
-Route::get('dashboard/permohonan/{slug}/edit', [PermohonanController::class, 'edit'])->name('dashboard.permohonan.edit');
-Route::put('dashboard/permohonan/{slug}', [PermohonanController::class, 'update'])->name('dashboard.permohonan.update');
-Route::get('dashboard/permohonan/delete/{slug}', [PermohonanController::class, 'destroy'])->name('dashboard.permohonan.delete');
-Route::get('dashboard/riwayat-permohonan', [PermohonanController::class, 'riwayatPermohonan'])->name('dashboard.riwayat');
-Route::get('dashboard/opd-su', [PermohonanController::class, 'resultDinas'])->name('dashboard.opd');
-Route::resource('dashboard/users', UserController::class);
+    // route Admin
+    Route::get('sirekudace', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('sirekudace/permohonan', [PermohonanController::class, 'permohonanAdmin'])->name('dashboard.permohonan');
+    Route::get('sirekudace/permohonan/{slug}/edit', [PermohonanController::class, 'edit'])->name('dashboard.permohonan.edit');
+    Route::put('sirekudace/permohonan/{slug}', [PermohonanController::class, 'update'])->name('dashboard.permohonan.update');
+    Route::get('sirekudace/permohonan/delete/{slug}', [PermohonanController::class, 'destroy'])->name('dashboard.permohonan.delete');
+    Route::get('sirekudace/riwayat-permohonan', [PermohonanController::class, 'riwayatPermohonan'])->name('dashboard.riwayat');
+    Route::get('sirekudace/laporan', [PermohonanController::class, 'cetakLaporan'])->name('dashboard.laporan');
+    // Route::get('sirekudace/opd-su', [PermohonanController::class, 'resultDinas'])->name('dashboard.opd');
+    Route::resource('sirekudace/dinas', DinasController::class);
+    Route::resource('sirekudace/users', UserController::class);
 
-// profile
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // profile
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
-// logout
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    // logout
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });
 
 Route::middleware(['guest'])->group(function () {
-// route Login
-Route::get('/login', [LoginController::class, 'login'])->name('login');
-Route::post('/login', [LoginController::class, 'postLogin'])->name('post.login');
+    // route Login
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/login', [LoginController::class, 'postLogin'])->name('post.login');
 });
